@@ -15,6 +15,7 @@ module.exports = {
       remotes: {
         product: "product@http://localhost:8081/remoteEntry.js",
         card: "card@http://localhost:8082/remoteEntry.js",
+        header: "header@http://localhost:8083/remoteEntry.js",
       },
     }),
   ],
