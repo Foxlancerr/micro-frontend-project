@@ -4,17 +4,18 @@ const moduleFedrainPlugin = require("webpack/lib/container/ModuleFederationPlugi
 module.exports = {
   mode: "development",
   devServer: {
-    port: 8082,
+    port: 8080,
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
     new moduleFedrainPlugin({
       name: "container",
       remotes: {
         product: "product@http://localhost:8081/remoteEntry.js",
+        card: "card@http://localhost:8082/remoteEntry.js",
       },
-    }),
-    new HtmlWebpackPlugin({
-      template: "./public/index.html",
     }),
   ],
 };
